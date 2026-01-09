@@ -50,11 +50,6 @@ solver = st.sidebar.selectbox(
 
 max_iter = int(st.sidebar.number_input('Max Iterations',value=100))
 
-multi_class = st.sidebar.selectbox(
-    'Multi Class',
-    ('auto', 'ovr', 'multinomial')
-)
-
 l1_ratio = int(st.sidebar.number_input('l1 Ratio'))
 
 # Load initial graph
@@ -68,7 +63,7 @@ orig = st.pyplot(fig)
 if st.sidebar.button('Run Algorithm'):
     orig.empty()
 
-    clf = LogisticRegression(penalty=penalty,C=c_input,solver=solver,max_iter=max_iter,multi_class=multi_class,l1_ratio=l1_ratio)
+    clf = LogisticRegression(penalty=penalty,C=c_input,solver=solver,max_iter=max_iter,l1_ratio=l1_ratio)
     clf.fit(X_train,y_train)
 
     y_pred = clf.predict(X_test)
