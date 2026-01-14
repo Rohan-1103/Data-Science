@@ -1,3 +1,4 @@
+!pip install graphviz
 import matplotlib.pyplot as plt
 import streamlit as st
 import numpy as np
